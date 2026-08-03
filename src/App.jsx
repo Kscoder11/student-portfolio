@@ -6,6 +6,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 import Contact from './pages/Contact';
+import Tasks from './pages/Tasks';
 
 function App() {
   const portfolioData = {
@@ -47,6 +48,7 @@ function App() {
             <Route path="/skills" element={<Skills skills={portfolioData.skills} />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/tasks" element={<Tasks />} />
           </Routes>
         </main>
         <Footer name={portfolioData.name} socials={portfolioData.socials} />

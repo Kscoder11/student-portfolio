@@ -27,6 +27,11 @@ const Header = ({ name, title }) => {
             </NavLink>
           </li>
           <li>
+            <NavLink to="/tasks" style={({isActive}) => ({ color: isActive ? 'var(--accent-color)' : '' })}>
+              Tasks
+            </NavLink>
+          </li>
+          <li>
             <NavLink to="/contact" style={({isActive}) => ({ color: isActive ? 'var(--accent-color)' : '' })}>
               Contact
             </NavLink>

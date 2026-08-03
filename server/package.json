@@ -1,0 +1,14 @@
+{
+  "name": "task-management-server",
+  "version": "1.0.0",
+  "description": "RESTful backend server with Express for Task Management (CRUD with middleware pipeline)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^4.21.0"
+  }
+}
