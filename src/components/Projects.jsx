@@ -9,6 +9,7 @@ const Projects = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const fetchRepos = async () => {
@@ -36,6 +37,10 @@ const Projects = () => {
     fetchRepos();
   }, []);
 
+  const filteredData = data.filter((repo) =>
+    repo.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <section id="projects" className="skills">
       <h2 className="skills-title">
@@ -45,9 +50,24 @@ const Projects = () => {
         Live data fetched from the GitHub REST API for user <strong>@Kscoder11</strong>
       </p>
 
+      {!loading && !error && (
+        <div className="search-bar-container">
+          <input
+            type="text"
+            className="search-bar"
+            placeholder="Search repositories..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
+      )}
+
       {loading && <Spinner />}
       {error && <ErrorMessage message={error} />}
-      {!loading && !error && <RepoList data={data} />}
+      {!loading && !error && filteredData.length > 0 && <RepoList data={filteredData} />}
+      {!loading && !error && filteredData.length === 0 && (
+        <p className="projects-subtitle">No repositories match your search.</p>
+      )}
     </section>
   );
 };
