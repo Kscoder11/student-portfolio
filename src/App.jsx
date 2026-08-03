@@ -23,13 +23,7 @@ function App() {
       { name: "Node.js", icon: "ND" },
       { name: "Git", icon: "VC" }
     ],
-    projects: [
-      { name: "Expense Tracker", description: "Engineered a comprehensive financial management application designed to track user expenses and optimize personal budgeting workflows.", url: "https://github.com/Kscoder11/Expense_Tracker" },
-      { name: "METIS-HIRE-2.0", description: "Developed an automated recruitment platform streamlining candidate evaluation and hiring processes for enterprise environments.", url: "https://github.com/Kscoder11/METIS-HIRE-2.0" },
-      { name: "Autonomous Automation System", description: "Designed a sophisticated autonomous system leveraging Large Language Models to automate complex, multi-step operational tasks.", url: "https://github.com/Kscoder11/llm-based-autonomous-automation-system-" },
-      { name: "Semester 1 CCP Project", description: "Implemented foundational computer science concepts in a structured academic project focusing on core programming paradigms.", url: "https://github.com/Kscoder11/SEM-1-project-ccp" },
-      { name: "ITUE301 Student Portfolio", description: "Architected a responsive, dynamic professional portfolio utilizing React and modern front-end technologies to exhibit technical capabilities.", url: "https://github.com/Kscoder11/ITUE301-Student-Portfolio" }
-    ],
+
     socials: [
       { platform: "GitHub", link: "https://github.com/Kscoder11" },
       { platform: "LinkedIn", link: "https://linkedin.com" },
@@ -51,7 +45,7 @@ function App() {
               />
             } />
             <Route path="/skills" element={<Skills skills={portfolioData.skills} />} />
-            <Route path="/projects" element={<Projects projects={portfolioData.projects} />} />
+            <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
